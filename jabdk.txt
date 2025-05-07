@@ -1,0 +1,27 @@
+
+		boolean flag = true;
+		
+		for (Account account : customer) {
+
+			if (accountNo == account.getAccountNo()) {
+				System.out.println(account);
+
+				System.out.println();
+				System.out.println("******** ENTER AMOUNT TO BE WITHDRAW ********");
+				double withdrawBalance = scanner.nextDouble();
+				if (withdrawBalance <= account.getAccountBalance()) {
+					account.setAccountBalance(account.getAccountBalance() - withdrawBalance);
+					System.out.println();
+					System.out.println("AMOUNT WITHDRAW SUCCESSFULLY");
+					System.out.println("CURRENT ACCOUNT BALANCE: " + account.getAccountBalance());
+
+				} else {
+					System.out.println("************* INSUFFICIENT BALANCE *************");
+				}
+				break;
+			} else {
+				System.out.println("ACCOUNT NOT FOUND");
+				System.out.println("PLEASE ENTER VALID ACCOUNT NUMBER");
+				
+			}
+		}
